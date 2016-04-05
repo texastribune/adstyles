@@ -6,5 +6,19 @@ title: Ad Styles
 <p>This is the style guide for Texas Tribune ads. These are the guidelines that should be followed when setting up ads both within the Tribune project and News Apps projects.</p>
 <h2>Ad Units</h2>
 <ul>
-
+<% data.AdUnits.each do |ad| %>
+  <li><%= ad["Unit"] %></li>
+<% end %>
+</ul>
+<h2>Ad Sizes</h2>
+<ul>
+<% data.AdSizes.each do |adsize| %>
+  <li><%= adsize["Width"] %>px by <%= adsize["Height"] %>px</li>
+<% end %>
+</ul>
+<h2>Ad Targeting</h2>
+<ul>
+<% data.AdTargeting.each do |target| %>
+  <li><%= target["Key"] %> and <%= target["Value"] %></li>
+<% end %>
 </ul>
