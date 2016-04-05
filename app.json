@@ -1,5 +1,23 @@
 {
   "name": "AdStyles",
   "description": "An ad style guide for The Texas Tribune",
-  "repository": "https://github.com/texastribune/adstyles"
+  "repository": "https://github.com/texastribune/adstyles",
+  "env": {
+    "GOOGLE_OAUTH_PRIVATE_KEY": {
+      "description": "Private key for Google OAuth",
+      "value": ""
+    },
+    "GOOGLE_DRIVE_KEY": {
+      "description": "Key of Google Drive sheet",
+      "value": ""
+    },
+    "GOOGLE_OAUTH_ISSUER": {
+      "description": "Google Oauth Issuer",
+      "value": ""
+    },
+    "GOOGLE_OAUTH_PERSON": {
+      "description": "Google Oauth person",
+      "value": ""
+    }
+  }
 }
