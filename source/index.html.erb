@@ -34,7 +34,7 @@ title: Ad Styles
   <% data.AdTargeting.each do |target| %>
     <% if target["Platform"] == 'Tribune' %>
       <li>
-        <h4><%= target["Type"] %>: <%= target["Target"] %></h4>
+        <h4><%= target["Key"] %>, <%= target["Value"] %></h4>
         <p><%= target["Info"] %></p>
       </li>
     <% end %>
@@ -45,7 +45,7 @@ title: Ad Styles
   <% data.AdTargeting.each do |target| %>
     <% if target["Platform"] == 'App' %>
       <li>
-        <h4><%= target["Type"] %>: <%= target["Target"] %></h4>
+        <h4><%= target["Key"] %>, <%= target["Value"] %></h4>
         <p><%= target["Info"] %></p>
       </li>
     <% end %>
