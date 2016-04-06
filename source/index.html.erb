@@ -15,7 +15,7 @@ title: Ad Styles
     <li>
       <h4><%= ad["Unit"] %></h4>
       <p><%= ad["Usage"] %></p>
-      <p>Unit used: <%= ad["Locations"] %></p>
+      <p>Placement: <%= ad["Locations"] %></p>
     </li>
   <% end %>
   </ul>
@@ -29,7 +29,18 @@ title: Ad Styles
   <% end %>
   </ul>
   <h2>Ad Targeting</h2>
+  <h3>Targeting Presets</h3>
+  <p>Targeting Presets are combinations of targeting and ad units that are reused throughout the Tribune site.</p>
+  <ul>
+    <% data.TargetPresets.each do |target| %>
+      <li>
+        <h4><%= target["Name"] %></h4>
+        <p><%= target["Description"] %></p>
+      </li>
+    <% end %>
+  </ul>
   <h3>The Texas Tribune</h3>
+  <p>These keyvalue pairs are examples of the keys and values that are used to target specific pages and locations on the Tribune site. There are many possible values for each of these keys.</p>
   <ul>
   <% data.AdTargeting.each do |target| %>
     <% if target["Platform"] == 'Tribune' %>
@@ -41,6 +52,7 @@ title: Ad Styles
   <% end %>
   </ul>
   <h3>Apps</h3>
+  <p>These keyvalue pairs are the exact ones that are used to target specific apps and projects.</p>
   <ul>
   <% data.AdTargeting.each do |target| %>
     <% if target["Platform"] == 'App' %>
