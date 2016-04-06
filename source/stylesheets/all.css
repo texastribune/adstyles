@@ -40,6 +40,18 @@ ul li {
   color: #008990;
 }
 
+.intro button {
+  background-color: #008990;
+  border: none;
+  margin: 1em 0;
+  padding: 0.5em;
+}
+
+.intro button a {
+  color: white;
+  text-decoration: none;
+}
+
 .main {
   background-color: #f5f5f5;
   padding: 1em;
