@@ -2,23 +2,54 @@
 title: Ad Styles
 ---
 
-<h1>Ad Styles</h1>
-<p>This is the style guide for Texas Tribune ads. These are the guidelines that should be followed when setting up ads both within the Tribune project and News Apps projects.</p>
-<h2>Ad Units</h2>
-<ul>
-<% data.AdUnits.each do |ad| %>
-  <li><%= ad["Unit"] %></li>
-<% end %>
-</ul>
-<h2>Ad Sizes</h2>
-<ul>
-<% data.AdSizes.each do |adsize| %>
-  <li><%= adsize["Width"] %>px by <%= adsize["Height"] %>px</li>
-<% end %>
-</ul>
-<h2>Ad Targeting</h2>
-<ul>
-<% data.AdTargeting.each do |target| %>
-  <li><%= target["Key"] %> and <%= target["Value"] %></li>
-<% end %>
-</ul>
+<div class="intro">
+  <h1>Ad Styles</h1>
+  <p>This is the style guide for ads used across The Texas Tribune platforms.</p>
+  <p>The goal of this style guide is to provide a reference for what to use when setting up ads both within the Tribune project and News Apps projects.</p>
+</div>
+<div class="main">
+  <h2>Ad Units</h2>
+  <ul>
+  <% data.AdUnits.each do |ad| %>
+    <li>
+      <h4><%= ad["Unit"] %></h4>
+      <p><%= ad["Usage"] %></p>
+      <p><%= ad["Locations"] %></p>
+    </li>
+  <% end %>
+  </ul>
+  <h2>Ad Sizes</h2>
+  <ul>
+  <% data.AdSizes.each do |adsize| %>
+    <li>
+      <h4><%= adsize["Width"].floor %>px by <%= adsize["Height"].floor %>px</h4>
+      <p><%= adsize["Usage"] %></p>
+    </li>
+  <% end %>
+  </ul>
+  <h2>Ad Targeting</h2>
+  <h3>The Texas Tribune</h3>
+  <ul>
+  <% data.AdTargeting.each do |target| %>
+    <% if target["Platform"] == 'Tribune' %>
+      <li>
+        <h4><%= target["Type"] %>: <%= target["Target"] %></h4>
+        <p><%= target["Project"] %></p>
+        <p><%= target["Info"] %></p>
+      </li>
+    <% end %>
+  <% end %>
+  </ul>
+  <h3>Apps</h3>
+  <ul>
+  <% data.AdTargeting.each do |target| %>
+    <% if target["Platform"] == 'App' %>
+      <li>
+        <h4><%= target["Type"] %>: <%= target["Target"] %></h4>
+        <p><%= target["Project"] %></p>
+        <p><%= target["Info"] %></p>
+      </li>
+    <% end %>
+  <% end %>
+  </ul>
+</div>
